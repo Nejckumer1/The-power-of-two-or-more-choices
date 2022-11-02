@@ -1,0 +1,90 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage[slovene]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts,amsmath,amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newtheorem{Izrek}{Izrek}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \LARGE
+        UNIVERZA V LJUBLJANI\\
+        FAKULTETA ZA MATEMATIKO IN FIZIKO\\
+        FINANČNA MATEMATIKA\\
+
+        \vspace*{5cm}
+        
+        Finančni praktikum\\
+        \huge
+        \textbf{The power of two or more choices}
+
+        \vspace*{6cm}
+
+        \Large
+        Avtorja:\\
+        Nejc Kumer in Neža Lesnjak
+    \end{center}
+\end{titlepage}
+    
+\section{Navodila}
+
+Imamo $n$ žog in $n$ košev. Žoge polagamo v koše na spodnje načine:
+
+\begin{itemize}
+    \item za vsako žogo izberemo naključen koš in žogo vržemo vanj.
+    \item za vsako žogo naključno izberemo dva izmed košev in žogo vržemo v tistega, 
+    ki smo ga do tega trenutka manjkrat zadeli.
+    \item za vsako žogo naključno izberemo tri izmed košev in žogo vržemo v tistega, 
+    ki smo ga do tega trenutka manjkrat zadeli.
+    \item ...
+\end{itemize}
+
+Zanima nas maksimalna zasedenost, torej število zadetkov v tisti koš, ki smo ga največkrat zadeli.
+Eksperimentalno analizirajte te naključne postopke.\\
+Kaj se zgodi, če imamo $n$ košev in $2n$, $3n$, $4n$ ... žog?
+V tem primeru nas zanima tudi minimalna zasedenost.
+Za $n$ izbiramo velike vrednosti.
+
+\section{Opis problema}
+
+Problem $n$ žog in $n$ košev je v teoriji verjetnosti znan problem, ki ima veliko aplikacij tudi v drugih vedah, predvsem v računalništvu.\\
+Delitev žog v koše je lahko popolnoma naključna ali delno naključna.
+V zgoraj naštetih primerih delitve gre le v prvi točki za popolnoma naključno delitev.
+V vseh naslednjih točkah imamo delno naključno delitev - naključno izberemo le določeno število košev in nato žogo položimo v tistega izmed izbranih,
+ki smo ga do tega trenutka najmanjkrat zadeli. To v angleškem jeziku poimenujemo \emph{the power of
+two or more choices} - odvisno od tega, koliko košev naključno izberemo.
+
+\section{Pričakovani rezultati}
+
+Če imamo torej $n$ košev in $n$ žog v prvem delu naloge, ko za vsako žogo naključno izberemo koš in vržemo žogo vanj,
+za koš z največ žogami pričakujemo rezultat iz spodnjega izreka.
+
+\begin{Izrek}
+    Koš z največ žogami ima $\Omega (\frac{\log{n}}{\log{\log{n}}})$ žog z verjetnostjo $1 - \frac{1}{\sqrt[3]{n}}$.
+\end{Izrek}
+
+V drugem delu naloge, torej v primeru, ko naključno izberemo $d$ košev (in $d \geq 2$), ter žogo položimo v bolj praznega od njih,
+pa bomo pričakovali spodnji rezultat.
+
+\begin{Izrek}
+    Koš z največ žogami ima $\frac{\log {\log{n}}}{\log{d}} + O(1)$ žog z verjetnostjo blizu 1.
+\end{Izrek}
+
+Rezulata iz slednjega izreka je skoraj eksponentno manjši kot rezultat iz prvega izreka za popolnoma naključno delitev žog v koše.
+
+V nalogi bova preverila, kako se rezultati maksimalne zasedenosti spreminjajo, če žoge razporejamo na različne, zgoraj omenjene načine
+in kako, če imamo $n$ košev in $n$, $2n$, $3n$, ... žog.
+
+\section{Načrt za nadaljnje delo}
+V nadaljevanju bova za reševanje problema uporabila programski jezik \emph{Python} ali \emph{R}.
+Pripravila bova program in ga z eksperimentiranjem preizkusila na konkretnih podatkih. Zanimalo naju bo,
+koliko bodo rezultati eksperimentov odstopali od predvidenih rezultatov glede na zgornja izreka.
+
+
+\end{document}
