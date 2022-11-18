@@ -8,11 +8,15 @@ def argmin(seznam):   # na katerem mestu je najmanj zog
         if seznam[i] == najmanjsi_element:
             return i
 
+# N ... št. košev
+# n ... št. žog
+# d ... med koliko koši izbiramo
+
 def najvecje_stevilo_zog_v_kosu(N,n,d,stevilo_ponovitev):
     max_zasedenosti = []
     kosi = kosi = [i for i in range(N)]
     for ponovitev in range(stevilo_ponovitev):
-        zoge = [0 for i in range(N)]        # seznam, ki predstavlja kose
+        zoge = [0 for i in range(n)]        # seznam, ki predstavlja kose
         for i in range(n):
             kateri = random.sample(kosi, d) # izberemo random d kosev
             koliko = [zoge[j] + (random.randint(0, 25) / 100) for j in kateri]  # pogledamo, koliko zog je v vsakem kosu  
@@ -21,9 +25,9 @@ def najvecje_stevilo_zog_v_kosu(N,n,d,stevilo_ponovitev):
         max_zasedenosti.append(max(zoge))   # koliko zog je v najbolj zasedenem kosu
     avg = sum(max_zasedenosti)/len(max_zasedenosti) # povprecna najvecja zasedenost
     if d == 1:
-        analiticno = log(n)/log(log(n)) # kako izracunamo ce je d = 1
+        analiticno = log(n)/log(log(n)) # kako izracunamo, ce je d = 1
     else:
-        analiticno = log(log(n))/log(d) # kako izracunamo ce je d >= 2
+        analiticno = log(log(n))/log(d) # kako izracunamo, ce je d >= 2
     return avg, analiticno
 
 
