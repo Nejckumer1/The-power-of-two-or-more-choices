@@ -49,13 +49,14 @@ def izvedi_funkcijo(Poskusi, N, n, d, stevilo_ponovitev):
         wr = csv.writer(f)
         wr.writerow(["avg", "analiticno", "cas"])
         # Ce je Poskusi == 0 izvajamo do prekinitve, sicer omejeno
-        i = 1
-        while i != Poskusi - 1:
+        i = 0
+        while i != Poskusi:
             avg, analiticno, cas = najvecje_stevilo_zog_v_kosu(N, n, d, stevilo_ponovitev)
             avg = round(avg, 4)
             analiticno = round(analiticno, 4)
             wr.writerow([avg, analiticno, cas])
             f.flush() # vrstica naj se zapiše takoj
+            i += 1
 
 
 izvedi_funkcijo(1000, 1000, 1000, 1, 1000)
