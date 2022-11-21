@@ -50,6 +50,8 @@ def izvedi_funkcijo(Poskusi, N, n, d, stevilo_ponovitev):
         wr.writerow(["avg", "analiticno", "cas"])
         # Ce je Poskusi == 0 izvajamo do prekinitve, sicer omejeno
         i = 0
+        if Poskusi == 0:
+            Poskusi = -1
         while i != Poskusi:
             avg, analiticno, cas = najvecje_stevilo_zog_v_kosu(N, n, d, stevilo_ponovitev)
             avg = round(avg, 4)
