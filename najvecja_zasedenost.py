@@ -71,9 +71,23 @@ izvedi_funkcijo(1000, 10000, 10000, 3, 1000)
 izvedi_funkcijo(1000, 10000, 10000, 4, 1000)
 izvedi_funkcijo(1000, 10000, 10000, 5, 1000)
 izvedi_funkcijo(1000, 10000, 10000, 10, 1000)
-"""
+
 izvedi_funkcijo(900, 10000, 10000, 2, 100)       # 5,5 sekund
 izvedi_funkcijo(700, 10000, 10000, 3, 100)       # 7 sekund 
 izvedi_funkcijo(600, 10000, 10000, 4, 100)       # 8,5 sekund
 izvedi_funkcijo(500, 10000, 10000, 5, 100)       # 10 sekund
 izvedi_funkcijo(500, 10000, 10000, 10, 50)       # 9 sekund
+
+izvedi_funkcijo(10, 1000, 10000, 1, 100)
+izvedi_funkcijo(10, 1000, 100000, 1, 100)
+
+izvedi_funkcijo(10, 1000, 1000, 2, 100)
+izvedi_funkcijo(10, 1000, 10000, 2, 100)
+izvedi_funkcijo(10, 1000, 100000, 2, 100)
+"""
+izvedi_funkcijo(100, 1000, 2000, 1, 100)
+izvedi_funkcijo(100, 1000, 3000, 1, 100)
+
+izvedi_funkcijo(100, 1000, 1000, 2, 100)
+izvedi_funkcijo(100, 1000, 2000, 2, 100)
+izvedi_funkcijo(100, 1000, 3000, 2, 100)
