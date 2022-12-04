@@ -33,8 +33,8 @@
     \end{center}
 \end{titlepage}
 
-%\tableofcontents
-%\pagebreak
+\tableofcontents
+\pagebreak
 
 \section{Navodila}
 
@@ -169,6 +169,7 @@ kot določimo v argumentu \emph{Poskusi}.
 \subsection{Popolnoma naključna delitev žog in $N = n$}
 Rezultati popolno naključnega razporejanja žog, pri enakem številu košev in žog.
 Predstavljeni so rezultati za $n = N = 1000$, $n = N = 10000$ in $n = N = 100000$.
+
 Z rdečo črto so označene povprečne vrednosti, in iz njih sklepava, da za različne $n$ (ki so 
 oblike $10^x$) velja,
 da je največje število žog v košu približno enako $1,1(2+log(n))$.
@@ -178,7 +179,9 @@ da je največje število žog v košu približno enako $1,1(2+log(n))$.
 \subsection{Delno naključna delitev žog in $N = n$}
 
 Spodaj so prikazani rezultati delno naključne delitve za $d=2$ in $d=4$, pri čemer imamo
-$N = n = 10000$. Za primerjavo je dodana tudi popolnoma naključna delitev žog, torej za $d = 1$.
+$N = n = 10000$. 
+
+Za primerjavo je dodana tudi popolnoma naključna delitev žog, torej za $d = 1$.
 
 \includegraphics[scale=0.6]{delno_nakljucno.png}
 
@@ -186,11 +189,11 @@ $N = n = 10000$. Za primerjavo je dodana tudi popolnoma naključna delitev žog,
 
 \includegraphics[scale=0.60]{popolnoma_nakljucno2.png}
 
-Najprej imamo zgoraj primer, ko žoge razporejamo popolnoma naključno.
-Predstavljeni so primeri, ko imamo $1000$ košev in $1000$, $2000$ in $3000$ žog.
+Najprej imamo zgoraj rezultate, ko žoge razporejamo popolnoma naključno.
+Predstavljeni so primeri, ko imamo $1000$ košev in $1000$, $2000$ ter $3000$ žog.
 \\
 \\
-Spodaj pa imamo primere za $1000$ košev in $1000$, $2000$ in $3000$ žog, pri čemer žoge 
+Spodaj pa imamo primere za $1000$ košev in $1000$, $2000$ ter $3000$ žog, pri čemer žoge 
 razporejamo delno naključno z $d = 2$. 
 
 Sklepava, da v primerih, ko velja $d = 2$ in $n = 1000$, za največje število žog v košu približno
@@ -200,16 +203,48 @@ velja vrednost $log(n) + \frac{N}{n} -1$.
 
 \subsection{Časovna odvisnost}
 
-V spodnjih grafih je prikazan čas, ki je potreben za izvedbo ene ponovitve poskusa za določene podatke. 
-Pri prvem grafu smo primerjali časovno zahtevnost algoritma za različno število naključno izbranih košev(d). 
-Ugotovili smo, da z večanjem naključnega števila izbranih košev linearno narašča tudi čas, ki je potreben za izvedbo našega algoritma, in sicer za vsak povečan d, se čas izvajanja algoritma podaljša za približno sekundo.
-\\
-\\
-Rezultati drugega grafa, kjer smo obravnavali časovno zahtevnost algoritma glede na število vseh košev in žog v poskusu, so precej podobni rezultatom iz prvega grafa, in sicer se spet pojavi linearno naraščanje. 
+V spodnjih tabelah je prikazan povprečni čas, ki je potreben za izvedbo ene ponovitve poskusa za določene podatke. 
+
+Pri prvi tabeli smo primerjali časovno zahtevnost algoritma za različno število naključno izbranih košev - različne $d$. 
+Ugotovili smo, da z večanjem naključnega števila izbranih košev linearno narašča tudi čas, 
+ki je potreben za izvedbo našega algoritma, in sicer za vsak povečan $d$, se čas izvajanja algoritma podaljša za približno sekundo.
+
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        $d$ & čas \\
+        \hline
+        2 & 6.649257 \\
+        \hline
+        3 & 8.275287 \\
+        \hline
+        4 & 9.931728 \\
+        \hline
+        5 & 11.616240 \\ 
+        \hline
+    \end{tabular}
+\end{center}
+
+Rezultati spodnje tabele, kjer imamo povprečno časovno zahtevnost algoritma glede na število vseh košev in žog v poskusu, so precej podobni rezultatom iz prve tabele - spet se pojavi linearno naraščanje. 
+
 Opazimo lahko, da se za vsakih $1000$ novih obravnavanih košev, izvajanje našega algoritma podaljša za približno $5$ sekund. 
 
+\begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        št. košev/žog & čas \\
+        \hline
+        1000 & 5.00000 \\
+        \hline
+        10000 & 50.07592 \\
+        \hline
+        100000 & 498.73500 \\
+        \hline
+    \end{tabular}
+\end{center}
+
 \pagebreak
-\section*{Literatura}
+\section{Literatura}
 
 https://en.wikipedia.org/wiki/Balls\_into\_bins\_problem
 
