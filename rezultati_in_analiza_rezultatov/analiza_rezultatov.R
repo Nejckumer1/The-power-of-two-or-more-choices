@@ -185,4 +185,70 @@ legend('topright', legend = c("povprečje"),
 
 #################################################
 # casovna analiza
+
+#graf časovne zahtevnosti posameznega poganjanja
+library(readr)
+
+#uvozimo podatke
+a<-read.csv("najvecja_zasedenost_10000_10000_1.csv")
+b<-read.csv("najvecja_zasedenost_10000_10000_2.csv")
+c<-read.csv("najvecja_zasedenost_10000_10000_3.csv")
+d<-read.csv("najvecja_zasedenost_10000_10000_4.csv")
+e<-read.csv("najvecja_zasedenost_10000_10000_5.csv")
+f<-read.csv("najvecja_zasedenost_10000_10000_10.csv")
+g<-read.csv("najvecja_zasedenost_100000_100000_1.csv")
+
+
+
+
+#izračunamo povprečja vseh poganjanj za lažji izris tabele
+mean(a$avg)
+mean(a$analiticno)
+mean(a$cas)
+mean(b$avg)
+mean(b$analiticno)
+mean(b$cas)
+mean(c$avg)
+mean(c$analiticno)
+mean(c$cas)
+mean(d$avg)
+mean(d$analiticno)
+mean(d$cas)
+mean(e$avg)
+mean(e$analiticno)
+mean(e$cas)
+mean(f$avg)
+mean(f$analiticno)
+mean(f$cas)
+mean(g$avg)
+mean(g$analiticno)
+mean(g$cas)
+
+#uvozimo še novi dve tabeli, ki sta pripravljeni na izris
+povprecni1<-read.csv("povprecni-casi.csv")
+povprecni2<-read.csv("povprecni-casi2.csv")
+
+#prvi stolpec spremenimo v imena vrstic
+povprecni_koncni1 <- data.frame(povprecni1[,-1], row.names=povprecni1[,1])
+povprecni_koncni2 <- data.frame(povprecni2[,-1], row.names=povprecni2[,1])
+
+
+#narišemo graf časov
+#graf1
+ts.plot(povprecni_koncni1, type="o", main="Časovna odvisnost poganjanja glede na število naključno izbranih košev(d)",
+        xlab="Število naključno izbranih košev(d)", ylab="čas v sekundah", col=c("blue3"))
+legend("bottomright", 
+       c("čas"), 
+       col=c("blue3"), 
+       lwd=1,
+       cex=0.8)
+
+#graf2
+ts.plot(povprecni_koncni2, type="o", main="Časovna odvisnost poganjanja glede na izbrano število  žog/košev",
+        xlab="Izbrano število žog/košev", ylab="čas v sekundah", col=c("red"))
+legend("bottomright", 
+       c("čas"), 
+       col=c("red"), 
+       lwd=1,
+       cex=0.7)
 #################################################
